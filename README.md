@@ -30,11 +30,10 @@
 
 ```bash
 .
+├── assets # 資源
 ├── src # 源碼
-│ ├── assets # 資源
 │ ├── components # 元件
 │ ├── pages # 頁面
 │ ├── App.tsx # 主應用
-│ ├── main.tsx # 主入口
-│ └── router # 路由
+│ └── main.tsx # 主入口
 ```
