@@ -20,7 +20,9 @@
     "noUnusedParameters": true,
     "types": ["vite-plugin-svgr/client", "node"],
     "paths": {
-      "@assets/*": ["./assets/*"]
+      "@assets/*": ["./assets/*"],
+      "@hooks-api/*": ["./src/hooks-api/*"],
+      "@kdan-ui": ["./src/kdan-ui/index.ts"],
     },
     "noFallthroughCasesInSwitch": true
   },

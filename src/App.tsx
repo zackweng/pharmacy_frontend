@@ -2,11 +2,12 @@ import { createBrowserRouter, Navigate, RouterProvider } from 'react-router-dom'
 
 import './global.css'
 import { Home } from './pages/Home'
-
+import { Layout } from './pages/Layout'
 export function App () {
   const router = createBrowserRouter([
     {
       path: '/',
+      element: <Layout />,
       children: [
         { path: '/', element: <Navigate to="/home" replace /> },
         { path: '/home', element: <Home /> },
