@@ -1,12 +1,7 @@
 import useSWR from 'swr'
 
+import { type PharmacyTime } from '../types/pharmacy'
 import { clientSWRFetcher } from '../utils/clientSWRFetcher'
-
-interface PharmacyTime {
-  id: number | string,
-  cash_balance: number,
-  name: string,
-}
 
 export function useApiPharmacyTime (queryString?: string) {
   const key = queryString ? `/pharmacies/open?${queryString}` : null

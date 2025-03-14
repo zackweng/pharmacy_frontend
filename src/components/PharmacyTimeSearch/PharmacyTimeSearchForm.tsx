@@ -9,7 +9,6 @@ import { type PharmacyTimeSearchSchema } from './PharmacyTimeSearch'
 
 export function PharmacyTimeSearchForm () {
   const { control } = useFormContext<PharmacyTimeSearchSchema>()
-  // const formValues = watch()
 
   const dayOfWeekOptions = Object.values(DAY_OF_WEEK).map((day) => ({
     key: day,
@@ -61,6 +60,7 @@ export function PharmacyTimeSearchForm () {
               label="時間:"
               value={field.value ? new Date(field.value) : new Date()}
               sx={dateStyle}
+              ampm={false}
             />
           )}
         />

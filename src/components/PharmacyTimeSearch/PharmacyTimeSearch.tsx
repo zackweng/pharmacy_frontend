@@ -10,6 +10,7 @@ import { useApiPharmacyTime } from '../../hooks-api/useApiPharmacyTime'
 import { queryStringify } from '../../utils/queryStringify'
 
 import { PharmacyTimeSearchForm } from './PharmacyTimeSearchForm'
+import { PharmacyTimeSearchTable } from './PharmacyTimeSearchTable'
 
 export interface PharmacyTimeSearchSchema {
   dayOfWeek: DAY_OF_WEEK_TYPE,
@@ -26,7 +27,7 @@ export function PharmacyTimeSearch () {
 
   const [queryString, setQueryString] = useState('')
 
-  const { data: pharmacyTime } = useApiPharmacyTime(queryString)
+  const { data: pharmacyTimeData } = useApiPharmacyTime(queryString)
 
   const onSubmit = (data: PharmacyTimeSearchSchema) => {
     setQueryString(queryStringify({
@@ -36,7 +37,7 @@ export function PharmacyTimeSearch () {
   }
 
   // eslint-disable-next-line no-console
-  console.log(pharmacyTime)
+  console.log(pharmacyTimeData)
 
   return (
     <FormProvider {...methods}>
@@ -44,6 +45,9 @@ export function PharmacyTimeSearch () {
         <form onSubmit={methods.handleSubmit(onSubmit)}>
           <PharmacyTimeSearchForm />
         </form>
+      </Card>
+      <Card sx={{ mt: 2 }}>
+        <PharmacyTimeSearchTable data={pharmacyTimeData ?? []} />
       </Card>
     </FormProvider>
   )
