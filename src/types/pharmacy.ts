@@ -10,3 +10,5 @@ export interface PharmacyMask {
   pharmacy_id: Pharmacy['id'],
   price: number,
 }
+
+export type AllPharmacyMask = Record<string, PharmacyMask[]>

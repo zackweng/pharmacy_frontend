@@ -1,9 +1,9 @@
 import { TableContainer, TableRow, TableHead, Table, TableCell, TableBody } from '@mui/material'
 
-import { type User } from '../../types/user'
+import { type UserTransactionSummary } from '../../types/user'
 
 interface PharmacyTableProps {
-  data?: User[],
+  data?: UserTransactionSummary[],
 }
 
 export function UserTransactionRankTable ({ data }: PharmacyTableProps) {
