@@ -13,7 +13,7 @@ interface MaskQuantityInputProps {
   maskName: PharmacyMask['name'],
   maskPrice: PharmacyMask['price'],
   quantity: number,
-  setMasks: Dispatch<SetStateAction<Record<string, { quantity: number }>>>,
+  setMasks: Dispatch<SetStateAction<Record<string, PharmacyMask & { quantity: number }>>>,
 }
 
 export function MaskQuantityInput ({ maskId, maskName, maskPrice, quantity, setMasks }: MaskQuantityInputProps) {
