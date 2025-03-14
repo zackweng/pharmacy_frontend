@@ -8,9 +8,9 @@ import { FormProvider, useForm } from 'react-hook-form'
 import { DATE_TIME_FORMAT, TIME_FORMAT } from '../../constant/format'
 import { DAY_OF_WEEK } from '../../constant/time'
 import { queryStringify } from '../../utils/queryStringify'
+import { PharmacyTable } from '../PharmacyTable/PharmacyTable'
 
 import { PharmacyTimeSearchForm } from './PharmacyTimeSearchForm'
-import { PharmacyTimeSearchTable } from './PharmacyTimeSearchTable'
 
 export interface PharmacyTimeSearchSchema {
   dayOfWeek: DAY_OF_WEEK,
@@ -48,7 +48,7 @@ export function PharmacyTimeSearch () {
           <Card sx={{ mt: 2, p: 2 }}>
             {
               pharmacyTimeData.length > 0
-                ? <PharmacyTimeSearchTable data={pharmacyTimeData ?? []} />
+                ? <PharmacyTable data={pharmacyTimeData ?? []} />
                 : <Typography>查無資料</Typography>
             }
           </Card>

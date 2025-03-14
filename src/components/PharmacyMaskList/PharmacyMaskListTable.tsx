@@ -8,7 +8,7 @@ interface PharmacyMaskListTableProps {
 
 export function PharmacyMaskListTable ({ data }: PharmacyMaskListTableProps) {
   return (
-    <TableContainer sx={{ maxHeight: 600, overflow: 'auto' }}>
+    <TableContainer sx={{ maxHeight: 550, overflow: 'auto' }}>
       <Table stickyHeader>
         <TableHead>
           <TableRow>

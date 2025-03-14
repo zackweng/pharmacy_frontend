@@ -1,16 +1,11 @@
 import useSWR from 'swr'
 
-import { type SORT_TYPE } from '../constant/order'
-// import { type PharmacyTime } from '../types/pharmacy'
+import { type PharmacyMaskListSchema } from '../components/PharmacyMaskList/PharmacyMaskList'
 import { type PharmacyMask } from '../types/pharmacy'
 import { clientSWRFetcher } from '../utils/clientSWRFetcher'
 import { queryStringify } from '../utils/queryStringify'
 
-export interface PharmacyMasksParams extends Partial<{
-  pharmacyId: string,
-  sortBy: 'name' | 'price',
-  sortOrder: SORT_TYPE,
-}> {}
+export interface PharmacyMasksParams extends Partial<PharmacyMaskListSchema> {}
 
 export function useApiPharmacyMasks (params: PharmacyMasksParams) {
   const newParams = {

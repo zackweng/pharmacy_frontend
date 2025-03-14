@@ -2,13 +2,13 @@ import { TableContainer, TableRow, TableHead, Table, TableCell, TableBody } from
 
 import { type Pharmacy } from '../../types/pharmacy'
 
-interface PharmacyTimeSearchTableProps {
+interface PharmacyTableProps {
   data?: Pharmacy[],
 }
 
-export function PharmacyTimeSearchTable ({ data }: PharmacyTimeSearchTableProps) {
+export function PharmacyTable ({ data }: PharmacyTableProps) {
   return (
-    <TableContainer sx={{ maxHeight: 600, overflow: 'auto' }}>
+    <TableContainer sx={{ maxHeight: 550, overflow: 'auto' }}>
       <Table stickyHeader>
         <TableHead>
           <TableRow>
