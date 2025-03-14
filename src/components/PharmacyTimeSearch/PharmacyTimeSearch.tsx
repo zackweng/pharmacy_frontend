@@ -1,19 +1,19 @@
 import { useState } from 'react'
 
-import { Card } from '@mui/material'
+import { useApiPharmacyTime } from '@hooks-api'
+import { Card, Typography } from '@mui/material'
 import { format } from 'date-fns'
 import { FormProvider, useForm } from 'react-hook-form'
 
 import { DATE_TIME_FORMAT, TIME_FORMAT } from '../../constant/format'
-import { type DAY_OF_WEEK as DAY_OF_WEEK_TYPE, DAY_OF_WEEK } from '../../constant/time'
-import { useApiPharmacyTime } from '../../hooks-api/useApiPharmacyTime'
+import { DAY_OF_WEEK } from '../../constant/time'
 import { queryStringify } from '../../utils/queryStringify'
 
 import { PharmacyTimeSearchForm } from './PharmacyTimeSearchForm'
 import { PharmacyTimeSearchTable } from './PharmacyTimeSearchTable'
 
 export interface PharmacyTimeSearchSchema {
-  dayOfWeek: DAY_OF_WEEK_TYPE,
+  dayOfWeek: DAY_OF_WEEK,
   timeStr: string,
 }
 
@@ -36,9 +36,6 @@ export function PharmacyTimeSearch () {
     }))
   }
 
-  // eslint-disable-next-line no-console
-  console.log(pharmacyTimeData)
-
   return (
     <FormProvider {...methods}>
       <Card>
@@ -46,9 +43,17 @@ export function PharmacyTimeSearch () {
           <PharmacyTimeSearchForm />
         </form>
       </Card>
-      <Card sx={{ mt: 2 }}>
-        <PharmacyTimeSearchTable data={pharmacyTimeData ?? []} />
-      </Card>
+      {
+        pharmacyTimeData && (
+          <Card sx={{ mt: 2, p: 2 }}>
+            {
+              pharmacyTimeData.length > 0
+                ? <PharmacyTimeSearchTable data={pharmacyTimeData ?? []} />
+                : <Typography>查無資料</Typography>
+            }
+          </Card>
+        )
+      }
     </FormProvider>
   )
 }

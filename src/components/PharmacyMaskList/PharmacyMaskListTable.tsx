@@ -1,26 +1,26 @@
 import { TableContainer, TableRow, TableHead, Table, TableCell, TableBody } from '@mui/material'
 
-import { type Pharmacy } from '../../types/pharmacy'
+import { type PharmacyMask } from '../../types/pharmacy'
 
-interface PharmacyTimeSearchTableProps {
-  data?: Pharmacy[],
+interface PharmacyMaskListTableProps {
+  data?: PharmacyMask[],
 }
 
-export function PharmacyTimeSearchTable ({ data }: PharmacyTimeSearchTableProps) {
+export function PharmacyMaskListTable ({ data }: PharmacyMaskListTableProps) {
   return (
     <TableContainer sx={{ maxHeight: 600, overflow: 'auto' }}>
       <Table stickyHeader>
         <TableHead>
           <TableRow>
-            <TableCell>藥局名稱</TableCell>
-            <TableCell>現金餘額</TableCell>
+            <TableCell>口罩名稱</TableCell>
+            <TableCell>口罩價格</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
           {data?.map((item) => (
             <TableRow key={item.id}>
               <TableCell>{item.name}</TableCell>
-              <TableCell>{item.cash_balance}</TableCell>
+              <TableCell>{item.price}</TableCell>
             </TableRow>
           ))}
         </TableBody>

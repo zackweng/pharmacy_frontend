@@ -75,7 +75,6 @@ export const Select = forwardRef(function LabeledSelect (
               },
             },
           }}
-          renderValue={() => Array.isArray(value) ? value.join(', ') : value}
           multiple={multiple}
           {...rest}
         >
@@ -97,7 +96,7 @@ export const Select = forwardRef(function LabeledSelect (
             </MenuItem>
           ))}
         </MuiSelect>
-        {errorMessage && <Typography ml={2} color="red" variant="body2" position="absolute" bottom={-20}>{errorMessage}</Typography>}
+        {errorMessage && <Typography ml={1} color="red" variant="body2" position="absolute" bottom={-20}>{errorMessage}</Typography>}
       </FormControl>
     </VStack>
   )

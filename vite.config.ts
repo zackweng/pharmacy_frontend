@@ -35,6 +35,7 @@ export default defineConfig(({ mode }) => {
       alias: {
         '@assets': resolve(__dirname, './assets'),
         '@kdan-ui': resolve(__dirname, './src/kdan-ui/index.ts'),
+        '@hooks-api': resolve(__dirname, './src/hooks-api/index.ts'),
       },
     },
   }
