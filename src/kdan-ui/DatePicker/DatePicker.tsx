@@ -39,7 +39,7 @@ export const DatePicker = forwardRef(function LabeledDatePicker (
     <VStack width={fullWidth ? '100%' : undefined} display="flex" gap={1}>
       {label && (
         <Box>
-          <Typography ml={2}>
+          <Typography ml={1}>
             {label || <>&nbsp;</>}
             {required && <AsteriskRed />}
             <>&nbsp;</>
@@ -69,7 +69,7 @@ export const DatePicker = forwardRef(function LabeledDatePicker (
           }}
           {...rest}
         />
-        {errorMessage && <Typography mt={1} ml={2} color="red" variant="body2" position="absolute" bottom={-20}>{errorMessage}</Typography>}
+        {errorMessage && <Typography mt={1} ml={1} color="red" variant="body2" position="absolute" bottom={-20}>{errorMessage}</Typography>}
       </FormControl>
     </VStack>
   )
