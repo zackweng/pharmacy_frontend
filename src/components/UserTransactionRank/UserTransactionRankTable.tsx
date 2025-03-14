@@ -20,7 +20,7 @@ export function UserTransactionRankTable ({ data }: PharmacyTableProps) {
           {data?.map((item) => (
             <TableRow key={item.user_id}>
               <TableCell>{item.user_name}</TableCell>
-              <TableCell>{item.total_spent.toFixed(2)}</TableCell>
+              <TableCell>{Number(item.total_spent).toFixed(2)}</TableCell>
             </TableRow>
           ))}
         </TableBody>
