@@ -35,6 +35,7 @@
   pnpm dev # 開發環境
   pnpm build # 建置生產環境
   pnpm preview # 預覽生產環境
+  pnpm test # 執行測試
   ```
 
 ## 專案結構
