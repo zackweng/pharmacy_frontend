@@ -38,7 +38,7 @@ export function MaskPurchase () {
           error={!!errorMessage}
         />
         <Divider sx={{ width: '100%' }} />
-        <Card sx={{ maxHeight: 700, overflow: 'auto' }}>
+        <Card sx={{ maxHeight: 600, overflow: 'auto' }}>
           <VStack gap={2}>
             {
               Object.entries(allPharmacyMaskData ?? {}).map(([pharmacyName, pharmacyMasks]) => (
