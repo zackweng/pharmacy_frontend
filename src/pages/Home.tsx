@@ -12,7 +12,7 @@ import { TransactionStats } from '../components/TransactionStats/TransactionStat
 import { UserTransactionRank } from '../components/UserTransactionRank/UserTransactionRank'
 
 export function Home () {
-  const [tab, setTab] = useState(6)
+  const [tab, setTab] = useState(0)
 
   return (
     <Box p={2}>
