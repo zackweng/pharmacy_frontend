@@ -1,6 +1,7 @@
 import { useState } from 'react'
 
 import { type SearchParams, useApiSearch } from '@hooks-api'
+import { Loading } from '@kdan-ui'
 import { Card, Typography } from '@mui/material'
 import { FormProvider, useForm } from 'react-hook-form'
 
@@ -20,7 +21,7 @@ export function SmartSearch () {
 
   const [queryParams, setQueryParams] = useState<SearchParams>({})
 
-  const { data: searchData } = useApiSearch(queryParams)
+  const { data: searchData, isLoading } = useApiSearch(queryParams)
 
   const onSubmit = (data: SmartSearchSchema) => {
     setQueryParams(data)
@@ -34,15 +35,17 @@ export function SmartSearch () {
         </form>
       </Card>
       {
-        searchData && (
-          <Card sx={{ mt: 2, p: 2 }}>
-            {
-              searchData.length > 0
-                ? <SmartSearchTable data={searchData ?? []} />
-                : <Typography>查無資料</Typography>
+        isLoading
+          ? <Loading />
+          : searchData && (
+            <Card sx={{ mt: 2, p: 2 }}>
+              {
+                searchData.length > 0
+                  ? <SmartSearchTable data={searchData ?? []} />
+                  : <Typography>查無資料</Typography>
             }
-          </Card>
-        )
+            </Card>
+          )
       }
     </FormProvider>
   )

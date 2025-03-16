@@ -1,6 +1,7 @@
 import { useState } from 'react'
 
 import { type PharmacyMasksParams, useApiPharmacyMasks } from '@hooks-api'
+import { Loading } from '@kdan-ui'
 import { Card, Typography } from '@mui/material'
 import { FormProvider, useForm } from 'react-hook-form'
 
@@ -25,7 +26,7 @@ export function PharmacyMaskList () {
 
   const [queryParams, setQueryParams] = useState<PharmacyMasksParams>({})
 
-  const { data: pharmacyMaskData } = useApiPharmacyMasks(queryParams)
+  const { data: pharmacyMaskData, isLoading } = useApiPharmacyMasks(queryParams)
 
   const onSubmit = (data: PharmacyMaskListSchema) => {
     setQueryParams({
@@ -43,15 +44,17 @@ export function PharmacyMaskList () {
         </form>
       </Card>
       {
-        pharmacyMaskData && (
-          <Card sx={{ mt: 2, p: 2 }}>
-            {
-              pharmacyMaskData.length > 0
-                ? <PharmacyMaskListTable data={pharmacyMaskData ?? []} />
-                : <Typography>查無資料</Typography>
+        isLoading
+          ? <Loading />
+          : pharmacyMaskData && (
+            <Card sx={{ mt: 2, p: 2 }}>
+              {
+                pharmacyMaskData.length > 0
+                  ? <PharmacyMaskListTable data={pharmacyMaskData ?? []} />
+                  : <Typography>查無資料</Typography>
             }
-          </Card>
-        )
+            </Card>
+          )
       }
     </FormProvider>
   )

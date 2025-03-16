@@ -1,6 +1,7 @@
 import { useState } from 'react'
 
 import { useApiUserTopSpenders, type UserTopSpendersParams } from '@hooks-api'
+import { Loading } from '@kdan-ui'
 import { Card, Typography } from '@mui/material'
 import { format } from 'date-fns'
 import { FormProvider, useForm } from 'react-hook-form'
@@ -27,7 +28,7 @@ export function UserTransactionRank () {
 
   const [queryParams, setQueryParams] = useState<UserTopSpendersParams>({})
 
-  const { data: userTopSpendersData } = useApiUserTopSpenders(queryParams)
+  const { data: userTopSpendersData, isLoading } = useApiUserTopSpenders(queryParams)
 
   const onSubmit = (data: UserTransactionRankSchema) => {
     setQueryParams(data)
@@ -41,15 +42,17 @@ export function UserTransactionRank () {
         </form>
       </Card>
       {
-        userTopSpendersData && (
-          <Card sx={{ mt: 2, p: 2 }}>
-            {
-              userTopSpendersData.length > 0
-                ? <UserTransactionRankTable data={userTopSpendersData ?? []} />
-                : <Typography>查無資料</Typography>
+        isLoading
+          ? <Loading />
+          : userTopSpendersData && (
+            <Card sx={{ mt: 2, p: 2 }}>
+              {
+                userTopSpendersData.length > 0
+                  ? <UserTransactionRankTable data={userTopSpendersData ?? []} />
+                  : <Typography>查無資料</Typography>
             }
-          </Card>
-        )
+            </Card>
+          )
       }
     </FormProvider>
   )

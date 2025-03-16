@@ -1,6 +1,7 @@
 export * from './AsteriskRed/AsteriskRed'
 export * from './DatePicker/DatePicker'
 export * from './HStack/HStack'
+export * from './Loading/Loading'
 export * from './Select/Select'
 export * from './Snackbar/Snackbar'
 export * from './Tabs/Tabs'

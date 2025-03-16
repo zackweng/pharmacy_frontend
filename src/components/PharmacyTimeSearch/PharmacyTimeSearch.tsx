@@ -1,6 +1,7 @@
 import { useState } from 'react'
 
 import { useApiPharmacyTime } from '@hooks-api'
+import { Loading } from '@kdan-ui'
 import { Card, Typography } from '@mui/material'
 import { format } from 'date-fns'
 import { FormProvider, useForm } from 'react-hook-form'
@@ -27,7 +28,7 @@ export function PharmacyTimeSearch () {
 
   const [queryString, setQueryString] = useState('')
 
-  const { data: pharmacyTimeData } = useApiPharmacyTime(queryString)
+  const { data: pharmacyTimeData, isLoading } = useApiPharmacyTime(queryString)
 
   const onSubmit = (data: PharmacyTimeSearchSchema) => {
     setQueryString(queryStringify({
@@ -44,15 +45,17 @@ export function PharmacyTimeSearch () {
         </form>
       </Card>
       {
-        pharmacyTimeData && (
-          <Card sx={{ mt: 2, p: 2 }}>
-            {
+        isLoading
+          ? <Loading />
+          : pharmacyTimeData && (
+            <Card sx={{ mt: 2, p: 2 }}>
+              {
               pharmacyTimeData.length > 0
                 ? <PharmacyTable data={pharmacyTimeData ?? []} />
                 : <Typography>查無資料</Typography>
             }
-          </Card>
-        )
+            </Card>
+          )
       }
     </FormProvider>
   )

@@ -1,6 +1,7 @@
 import { useState } from 'react'
 
 import { useApiTransactionSummary, type UserTopSpendersParams } from '@hooks-api'
+import { Loading } from '@kdan-ui'
 import { Card, Typography } from '@mui/material'
 import { format } from 'date-fns'
 import { FormProvider, useForm } from 'react-hook-form'
@@ -25,7 +26,7 @@ export function TransactionStats () {
 
   const [queryParams, setQueryParams] = useState<UserTopSpendersParams>({})
 
-  const { data: transactionSummaryData } = useApiTransactionSummary(queryParams)
+  const { data: transactionSummaryData, isLoading } = useApiTransactionSummary(queryParams)
 
   const onSubmit = (data: TransactionStatsSchema) => {
     setQueryParams(data)
@@ -39,15 +40,17 @@ export function TransactionStats () {
         </form>
       </Card>
       {
-        transactionSummaryData && (
-          <Card sx={{ mt: 2, p: 2 }}>
-            {
-              Object.keys(transactionSummaryData).length > 0
-                ? <TransactionStatsResult data={transactionSummaryData} />
-                : <Typography>查無資料</Typography>
+        isLoading
+          ? <Loading />
+          : transactionSummaryData && (
+            <Card sx={{ mt: 2, p: 2 }}>
+              {
+                Object.keys(transactionSummaryData).length > 0
+                  ? <TransactionStatsResult data={transactionSummaryData} />
+                  : <Typography>查無資料</Typography>
             }
-          </Card>
-        )
+            </Card>
+          )
       }
     </FormProvider>
   )

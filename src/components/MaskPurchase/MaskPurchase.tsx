@@ -1,14 +1,14 @@
 import { useState } from 'react'
 
 import { useApiAllPharmacyMasks, useApiUsers } from '@hooks-api'
-import { Select, VStack } from '@kdan-ui'
+import { Loading, Select, VStack } from '@kdan-ui'
 import { Card, Divider } from '@mui/material'
 
 import { PharmacyMasks } from './PharmacyMasks'
 
 export function MaskPurchase () {
   const { data: allPharmacyMaskData } = useApiAllPharmacyMasks()
-  const { data: usersData } = useApiUsers()
+  const { data: usersData, isLoading } = useApiUsers()
 
   const [selectedUserId, setSelectedUserId] = useState<string>('')
   const [errorMessage, setErrorMessage] = useState<string>('')
@@ -38,21 +38,24 @@ export function MaskPurchase () {
           error={!!errorMessage}
         />
         <Divider sx={{ width: '100%' }} />
-        <Card sx={{ maxHeight: 600, overflow: 'auto' }}>
-          <VStack gap={2}>
-            {
-              Object.entries(allPharmacyMaskData ?? {}).map(([pharmacyName, pharmacyMasks]) => (
-                <PharmacyMasks
-                  key={pharmacyName}
-                  pharmacyName={pharmacyName}
-                  pharmacyMasks={pharmacyMasks}
-                  userId={selectedUserId}
-                  setErrorMessage={setErrorMessage}
-                />
-              ))
-            }
-          </VStack>
-        </Card>
+        {isLoading
+          ? <Loading />
+          : <Card sx={{ maxHeight: 600, overflow: 'auto' }}>
+            <VStack gap={2}>
+              {
+                Object.entries(allPharmacyMaskData ?? {}).map(([pharmacyName, pharmacyMasks]) => (
+                  <PharmacyMasks
+                    key={pharmacyName}
+                    pharmacyName={pharmacyName}
+                    pharmacyMasks={pharmacyMasks}
+                    userId={selectedUserId}
+                    setErrorMessage={setErrorMessage}
+                  />
+                ))
+              }
+            </VStack>
+          </Card>
+        }
       </VStack>
     </Card>
   )

@@ -2,6 +2,7 @@ import { useState } from 'react'
 
 import { useApiPharmacyFilter } from '@hooks-api'
 import { type PharmacyFilterParams } from '@hooks-api'
+import { Loading } from '@kdan-ui'
 import { Card, Typography } from '@mui/material'
 import { FormProvider, useForm } from 'react-hook-form'
 
@@ -28,7 +29,7 @@ export function MaskQuantityFilter () {
 
   const [queryParams, setQueryParams] = useState<PharmacyFilterParams>({})
 
-  const { data: pharmacyFilterData } = useApiPharmacyFilter(queryParams)
+  const { data: pharmacyFilterData, isLoading } = useApiPharmacyFilter(queryParams)
 
   const onSubmit = (data: MaskQuantityFilterSchema) => {
     setQueryParams(data)
@@ -41,15 +42,17 @@ export function MaskQuantityFilter () {
         </form>
       </Card>
       {
-        pharmacyFilterData && (
-          <Card sx={{ mt: 2, p: 2 }}>
-            {
-              pharmacyFilterData.length > 0
-                ? <PharmacyTable data={pharmacyFilterData ?? []} />
-                : <Typography>查無資料</Typography>
+        isLoading
+          ? <Loading />
+          : pharmacyFilterData && (
+            <Card sx={{ mt: 2, p: 2 }}>
+              {
+                pharmacyFilterData.length > 0
+                  ? <PharmacyTable data={pharmacyFilterData ?? []} />
+                  : <Typography>查無資料</Typography>
             }
-          </Card>
-        )
+            </Card>
+          )
       }
     </FormProvider>
   )
