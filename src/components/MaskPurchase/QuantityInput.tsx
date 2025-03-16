@@ -1,4 +1,3 @@
-'use client'
 import { type ChangeEvent, useState } from 'react'
 
 import { HStack } from '@kdan-ui'
