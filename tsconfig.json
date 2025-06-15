@@ -22,15 +22,14 @@
     "paths": {
       "@assets/*": ["./assets/*"],
       "@hooks-api": ["./src/hooks-api/index.ts"],
-      "@kdan-ui": ["./src/kdan-ui/index.ts"],
+      "@pharmacy-ui": ["./src/pharmacy-ui/index.ts"],
     },
     "noFallthroughCasesInSwitch": true
   },
   "include": [
     "src",
     "./app/**/*",
-    "./vite.config.ts",
-    "./.eslintrc.json",
+    "./.eslintrc.json"
   ],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

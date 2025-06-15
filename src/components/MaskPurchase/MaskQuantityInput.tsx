@@ -1,8 +1,8 @@
 import { type Dispatch, type SetStateAction } from 'react'
 
-import { HStack, VStack } from '@kdan-ui'
 import { Unstable_Grid2 as Grid, Typography } from '@mui/material'
 import { blue } from '@mui/material/colors'
+import { HStack, VStack } from '@pharmacy-ui'
 
 import { type PharmacyMask } from '../../types/pharmacy'
 

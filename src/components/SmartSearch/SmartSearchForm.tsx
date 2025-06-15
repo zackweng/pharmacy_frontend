@@ -1,5 +1,5 @@
-import { VStack } from '@kdan-ui'
 import { Box, Button, TextField, Typography } from '@mui/material'
+import { VStack } from '@pharmacy-ui'
 import { Controller, useFormContext } from 'react-hook-form'
 
 import { type SmartSearchSchema } from './SmartSearch'

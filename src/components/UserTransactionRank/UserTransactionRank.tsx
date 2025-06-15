@@ -1,8 +1,8 @@
 import { useState } from 'react'
 
 import { useApiUserTopSpenders, type UserTopSpendersParams } from '@hooks-api'
-import { Loading } from '@kdan-ui'
 import { Card, Typography } from '@mui/material'
+import { Loading } from '@pharmacy-ui'
 import { format } from 'date-fns'
 import { FormProvider, useForm } from 'react-hook-form'
 

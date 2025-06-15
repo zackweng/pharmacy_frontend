@@ -1,8 +1,8 @@
 
-# Kdan Frontend
+# Pharmacy Frontend
 
 ## 目錄
-- [Kdan Frontend](#kdan-frontend)
+- [Pharmacy Frontend](#pharmacy-frontend)
   - [目錄](#目錄)
   - [系統需求](#系統需求)
   - [安裝與執行](#安裝與執行)
@@ -47,7 +47,7 @@
 │ ├── components # 元件
 │ ├── constants # 常量
 │ ├── hooks-api # 使用 useSWR 的 hooks做成的 api hooks
-│ ├── kdan-ui # 自定義元件
+│ ├── pharmacy-ui # 自定義元件
 │ ├── pages # 頁面
 │ ├── types # 型別
 │ ├── utils # 工具函式

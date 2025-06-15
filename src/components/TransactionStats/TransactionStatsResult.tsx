@@ -1,5 +1,5 @@
-import { HStack, VStack } from '@kdan-ui'
 import { Typography } from '@mui/material'
+import { HStack, VStack } from '@pharmacy-ui'
 
 import { type TransactionSummary } from '../../types/user'
 

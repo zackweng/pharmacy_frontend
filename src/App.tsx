@@ -9,8 +9,8 @@ export function App () {
       path: '/',
       element: <Layout />,
       children: [
-        { path: '/', element: <Navigate to="/kdan_frontend" replace /> },
-        { path: '/kdan_frontend', element: <Home /> },
+        { path: '/', element: <Navigate to="/pharmacy_frontend" replace /> },
+        { path: '/pharmacy_frontend', element: <Home /> },
         { path: '*', element: 'NotFound' },
       ],
     },

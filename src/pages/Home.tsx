@@ -1,7 +1,7 @@
 import { useState } from 'react'
 
-import { Tabs } from '@kdan-ui'
 import { Box } from '@mui/material'
+import { Tabs } from '@pharmacy-ui'
 
 import { MaskPurchase } from '../components/MaskPurchase/MaskPurchase'
 import { MaskQuantityFilter } from '../components/MaskQuantityFilter/MaskQuantityFilter'

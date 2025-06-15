@@ -1,10 +1,10 @@
 import { type ChangeEvent, useState } from 'react'
 
-import { HStack } from '@kdan-ui'
 import AddIcon from '@mui/icons-material/Add'
 import SubtractIcon from '@mui/icons-material/Remove'
 import { IconButton, TextField } from '@mui/material'
 import grey from '@mui/material/colors/grey'
+import { HStack } from '@pharmacy-ui'
 
 const getQuantity = (quantity?: number, min?: number, max?: number) => {
   if (quantity === undefined || min === undefined || max === undefined) return 0

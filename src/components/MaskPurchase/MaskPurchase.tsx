@@ -1,8 +1,8 @@
 import { useState } from 'react'
 
 import { useApiAllPharmacyMasks, useApiUsers } from '@hooks-api'
-import { Loading, Select, VStack } from '@kdan-ui'
 import { Card, Divider } from '@mui/material'
+import { Loading, Select, VStack } from '@pharmacy-ui'
 
 import { PharmacyMasks } from './PharmacyMasks'
 
@@ -41,7 +41,7 @@ export function MaskPurchase () {
         {isLoading
           ? <Loading />
           : <Card sx={{ maxHeight: 600, overflow: 'auto' }}>
-            <VStack gap={2}>
+            <VStack gap={2} p={2}>
               {
                 Object.entries(allPharmacyMaskData ?? {}).map(([pharmacyName, pharmacyMasks]) => (
                   <PharmacyMasks

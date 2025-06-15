@@ -1,5 +1,5 @@
-import { HStack, Select, TimePicker, VStack } from '@kdan-ui'
 import { Box, Button } from '@mui/material'
+import { HStack, Select, TimePicker, VStack } from '@pharmacy-ui'
 import { Controller, useFormContext } from 'react-hook-form'
 
 import { TIME_FORMAT } from '../../constant/format'

@@ -1,8 +1,8 @@
 import { useState } from 'react'
 
 import { type PharmacyMasksParams, useApiPharmacyMasks } from '@hooks-api'
-import { Loading } from '@kdan-ui'
 import { Card, Typography } from '@mui/material'
+import { Loading } from '@pharmacy-ui'
 import { FormProvider, useForm } from 'react-hook-form'
 
 import { SORT_TYPE } from '../../constant/order'

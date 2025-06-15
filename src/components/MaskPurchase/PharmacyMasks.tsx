@@ -1,9 +1,9 @@
 import { type Dispatch, type SetStateAction, useMemo, useState } from 'react'
 
 import { useApiPurchaseMask } from '@hooks-api'
-import { HStack, VStack, Snackbar, type SnackbarProps } from '@kdan-ui'
 import { Button, Divider, Unstable_Grid2 as Grid, Typography } from '@mui/material'
 import { blue } from '@mui/material/colors'
+import { HStack, VStack, Snackbar, type SnackbarProps } from '@pharmacy-ui'
 
 import { type PharmacyMask } from '../../types/pharmacy'
 

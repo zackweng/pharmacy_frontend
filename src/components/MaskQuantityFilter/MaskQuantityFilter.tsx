@@ -2,8 +2,8 @@ import { useState } from 'react'
 
 import { useApiPharmacyFilter } from '@hooks-api'
 import { type PharmacyFilterParams } from '@hooks-api'
-import { Loading } from '@kdan-ui'
 import { Card, Typography } from '@mui/material'
+import { Loading } from '@pharmacy-ui'
 import { FormProvider, useForm } from 'react-hook-form'
 
 import { PharmacyTable } from '../PharmacyTable/PharmacyTable'

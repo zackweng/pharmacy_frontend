@@ -1,6 +1,6 @@
 import { useApiPharmacy } from '@hooks-api'
-import { HStack, Select, VStack } from '@kdan-ui'
 import { Box, Button } from '@mui/material'
+import { HStack, Select, VStack } from '@pharmacy-ui'
 import { Controller, useFormContext } from 'react-hook-form'
 
 import { type PharmacyMaskListSchema } from './PharmacyMaskList'

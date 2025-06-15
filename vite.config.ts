@@ -11,7 +11,7 @@ const ENV_PREFIX = 'REACT_APP_'
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, 'env', ENV_PREFIX)
   return {
-    base: '/kdan_frontend/',
+    base: '/pharmacy_frontend/',
     plugins: [
       react(),
       svgr(),
@@ -34,7 +34,7 @@ export default defineConfig(({ mode }) => {
     resolve: {
       alias: {
         '@assets': resolve(__dirname, './assets'),
-        '@kdan-ui': resolve(__dirname, './src/kdan-ui/index.ts'),
+        '@pharmacy-ui': resolve(__dirname, './src/pharmacy-ui/index.ts'),
         '@hooks-api': resolve(__dirname, './src/hooks-api/index.ts'),
       },
     },
