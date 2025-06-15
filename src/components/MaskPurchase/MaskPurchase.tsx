@@ -41,7 +41,7 @@ export function MaskPurchase () {
         {isLoading
           ? <Loading />
           : <Card sx={{ maxHeight: 600, overflow: 'auto' }}>
-            <VStack gap={2} p={2}>
+            <VStack gap={2} p={1}>
               {
                 Object.entries(allPharmacyMaskData ?? {}).map(([pharmacyName, pharmacyMasks]) => (
                   <PharmacyMasks
