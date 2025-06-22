@@ -4,10 +4,15 @@
 ## 目錄
 - [Pharmacy Frontend](#pharmacy-frontend)
   - [目錄](#目錄)
+  - [Demo](#demo)
   - [系統需求](#系統需求)
   - [安裝與執行](#安裝與執行)
   - [專案結構](#專案結構)
   - [功能](#功能)
+
+## Demo
+
+[Demo Link](https://zackweng.github.io/pharmacy_frontend/)
 
 ## 系統需求
 - Node.js >= 18
